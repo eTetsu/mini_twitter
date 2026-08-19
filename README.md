@@ -1,24 +1,55 @@
-# README
+# MiniTwitter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Twitter風のシンプルな投稿アプリです。ユーザー同士がフォローし合い、投稿を共有できます。
 
-Things you may want to cover:
+## アプリを作った理由
+- Rails の基礎から応用までの技術を実践的に学ぶため
+- ユーザー認証、CRUD操作、リレーション設計を体系的に理解するため
+- 基礎的な技術検証とデプロイ経験を積むため
 
-* Ruby version
+## できること（機能一覧）
 
-* System dependencies
+### ユーザー機能
+- ユーザー登録・ログイン・ログアウト
+- プロフィール表示・編集
 
-* Configuration
+### 投稿機能
+- 投稿の作成・編集・削除
+- 投稿の公開/非公開設定
+- キーワード検索
 
-* Database creation
+### フォロー機能
+- ユーザーのフォロー/フォロー解除
+- フォロー中のユーザーの投稿をタイムラインに表示
 
-* Database initialization
+### リアクション機能
+- 投稿へのいいね/いいね解除
+- 投稿のリツイート
 
-* How to run the test suite
+### タイムライン機能
+- 自分とフォロー中のユーザーの投稿を時系列で表示
 
-* Services (job queues, cache servers, search engines, etc.)
+## 技術スタック
+- **言語**: Ruby 3.2.3
+- **フレームワーク**: Ruby on Rails 7.2.3
+- **データベース**: PostgreSQL
+- **認証**: Sorcery
+- **インフラ**: Docker, Render
+- **バージョン管理**: Git, GitHub
 
-* Deployment instructions
+## ER図
+（作成後に画像を追加）
 
-* ...
+## 画面遷移図
+（作成後に画像を追加）
+
+## 今後の改善ポイント
+- フォロワーのみに公開する機能の追加
+- 画像添付機能の実装
+- 通知機能の実装
+- Ajax対応で非同期化
+- 管理者機能の追加
+- Ruby のバージョンアップ
+
+## デプロイ
+- URL: （デプロイ後に追加）

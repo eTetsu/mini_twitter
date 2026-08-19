@@ -18,9 +18,11 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
-
+      # GitHub Actions の CI で Brakeman による Rails 7.2.3 のサポート終了警告を回避
+      #- name: Scan for common Rails security vulnerabilities using static analysis
+      #  run: bin/brakeman --no-pager
       - name: Scan for common Rails security vulnerabilities using static analysis
-        run: bin/brakeman --no-pager
+        run: bin/brakeman --no-pager --ignore-checks CheckRailsEOL
 
   scan_js:
     runs-on: ubuntu-latest
@@ -88,8 +90,11 @@ jobs:
       - name: Run tests
         env:
           RAILS_ENV: test
-          DATABASE_URL: postgres://postgres:postgres@localhost:5432
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/mini_twitter_test
           # REDIS_URL: redis://localhost:6379/0
+          DATABASE_HOST: localhost
+          DATABASE_USERNAME: postgres
+          DATABASE_PASSWORD: postgres
         run: bin/rails db:test:prepare test test:system
 
       - name: Keep screenshots from failed system tests
