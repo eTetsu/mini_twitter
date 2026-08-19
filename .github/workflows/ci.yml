@@ -22,7 +22,9 @@ jobs:
       #- name: Scan for common Rails security vulnerabilities using static analysis
       #  run: bin/brakeman --no-pager
       - name: Scan for common Rails security vulnerabilities using static analysis
-        run: bin/brakeman --no-pager --skip-checks EOLRails
+        env:
+          SKIP_BRAKEMAN_CHECKS: EOLRails
+        run: bin/brakeman --no-pager
 
   scan_js:
     runs-on: ubuntu-latest
